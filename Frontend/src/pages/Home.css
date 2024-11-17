@@ -1,0 +1,47 @@
+.home-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#d6cec3;
+  min-height: 100vh; 
+}
+.home-image {
+  width: 50%; 
+  height: 100vh; 
+  object-fit: cover; 
+}
+
+.home-container {
+  width: 50%; 
+  height: 100vh;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.home-container h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.home-container p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.home-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-links a {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.home-links a:hover {
+  background-color: #555;
+}

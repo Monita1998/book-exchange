@@ -1,0 +1,86 @@
+### Root Endpoint
+GET http://localhost:5000/
+
+### User Signup
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "username": "monita123test1",
+  "email": "mon1233@example.com",
+  "password": "password12345"
+}
+
+### User Login
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "mon1@example.com",
+  "password": "password1234"
+}
+
+
+### post user profile
+POST http://localhost:5000/users/profile
+Content-Type: application/json
+
+{
+  "favorite_genres": "favoriteGenres",
+  "reading_preferences": "readingPreferences",
+  "books_owned": "booksOwned",
+  "books_wanted": "booksWanted"
+}
+
+### Get User Profile (Protected Route)
+GET http://localhost:5000/user/profile
+Authorization: Bearer {{token}}
+
+### Forgot Password
+POST http://localhost:5000/auth/forgot-password
+Content-Type: application/json
+
+{
+  "email": "john@example.com"
+}
+
+###
+@token= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtb24xQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNzYzOTQ4fQ.KW5719OUbaaSY1FdtzQ-tZ2lvU7r-HB5_XWDdkWDpGY
+### Reset Password
+POST http://localhost:5000/auth/reset-password
+Content-Type: application/json
+
+{
+  "token": "{{token}}",
+  "newPassword": "newpassword123"
+}
+
+### Create Book
+POST http://localhost:5000/books
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald"
+}
+
+### Get Books
+GET http://localhost:5000/books
+
+### Get Book by ID
+GET http://localhost:5000/books/1
+
+### Update Book
+PUT http://localhost:5000/books/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "The Great Gatsby (Updated)",
+  "author": "F. Scott Fitzgerald"
+}
+
+### Delete Book
+DELETE http://localhost:5000/books/1
+Authorization: Bearer {{token}}
