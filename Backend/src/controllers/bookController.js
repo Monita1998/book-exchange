@@ -4,7 +4,7 @@ const bookService = require('../services/bookService.js');
 class BookController {
   async createBook(req, res) {
     try {
-      const { title, author } = req.body;
+      const {title, author } = req.body;
       const userId = req.user.id;
       const book = await bookService.createBook(title, author, userId);
       res.status(201).json({ message: 'Book created successfully', book });

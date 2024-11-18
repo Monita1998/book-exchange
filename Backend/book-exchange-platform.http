@@ -7,8 +7,8 @@ Content-Type: application/json
 
 {
   "username": "monita123test1",
-  "email": "mon1233@example.com",
-  "password": "password12345"
+  "email": "test21@example.com",
+  "password": "password123456"
 }
 
 ### User Login
@@ -16,8 +16,8 @@ POST http://localhost:5000/auth/login
 Content-Type: application/json
 
 {
-  "email": "mon1@example.com",
-  "password": "password1234"
+  "email": "test21@example.com",
+  "password": "password123456"
 }
 
 
@@ -41,7 +41,7 @@ POST http://localhost:5000/auth/forgot-password
 Content-Type: application/json
 
 {
-  "email": "john@example.com"
+  "email": "mon1233@example.com"
 }
 
 ###
@@ -69,18 +69,18 @@ Content-Type: application/json
 GET http://localhost:5000/books
 
 ### Get Book by ID
-GET http://localhost:5000/books/1
+GET http://localhost:5000/books/3
 
 ### Update Book
-PUT http://localhost:5000/books/1
+PUT http://localhost:5000/books/3
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "title": "The Great Gatsby (Updated)",
-  "author": "F. Scott Fitzgerald"
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald new"
 }
 
 ### Delete Book
-DELETE http://localhost:5000/books/1
+DELETE http://localhost:5000/books/5
 Authorization: Bearer {{token}}

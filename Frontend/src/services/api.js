@@ -61,11 +61,13 @@ export const updateProfile = async (profileData) => {
 };
 
 export const createBook = async (bookData) => {
+  const token = localStorage.getItem('token');
   try {
     const response = await api.post('/books', bookData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(bookData),
     });
     return response.data;
   } catch (error) {

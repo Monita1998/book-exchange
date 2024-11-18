@@ -1,12 +1,11 @@
-// frontend/src/components/Auth/Login.js
 import React, { useState } from 'react';
-import { loginUser } from '../../services/api';
+import { createBook } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const AddBook = () => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    title: '',
+    author: ''
   });
 
   const navigate = useNavigate();
@@ -18,8 +17,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const user = await loginUser(formData);
-      localStorage.setItem('token', user.token);
+      await createBook(formData);
       navigate('/home');
     } catch (error) {
       alert(error.message);
@@ -28,11 +26,11 @@ const Login = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="email" name="email" placeholder="Email" onChange={handleChange} />
-      <input type="password" name="password" placeholder="Password" onChange={handleChange} />
-      <button type="submit">Login</button>
+      <input type="text" name="title" placeholder="Title" onChange={handleChange} />
+      <input type="text" name="author" placeholder="Author" onChange={handleChange} />
+      <button type="submit">Add</button>
     </form>
   );
 };
 
-export default Login;
+export default AddBook;
